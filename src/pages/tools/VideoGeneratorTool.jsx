@@ -59,8 +59,8 @@ export default function VideoGeneratorTool() {
       title: 'Scene 3: Climax & Brand Reveal',
       duration: '0:10 - 0:15',
       camera: 'Dramatic Slow Pull Back',
-      description: 'Kamera mundur dramatis menampakkan logo CODEFORGE yang mengkristal dengan pancaran aura hijau keemasan.',
-      prompt: 'Dramatic slow pull back revealing crystalline CODEFORGE logo, pulsing green emerald volumetric shockwave, sleek tech commercial outro'
+      description: 'Kamera mundur dramatis menampakkan logo Tools Web yang mengkristal dengan pancaran aura hijau keemasan.',
+      prompt: 'Dramatic slow pull back revealing crystalline Tools Web logo, pulsing green emerald volumetric shockwave, sleek tech commercial outro'
     }
   ]);
 
@@ -258,7 +258,7 @@ export default function VideoGeneratorTool() {
                 {scenes[activeSceneIndex]?.title || 'Scene Active'}
               </span>
               <h3 className="text-xl sm:text-2xl font-black tracking-tight drop-shadow-md">
-                {activeSceneIndex === 0 && 'CODEFORGE AI MOTION'}
+                {activeSceneIndex === 0 && 'TOOLS WEB AI MOTION'}
                 {activeSceneIndex === 1 && 'HTML ➔ PHP TRANSFORMATION'}
                 {activeSceneIndex === 2 && 'EXPERIENCE NEXT-GEN CODING'}
               </h3>

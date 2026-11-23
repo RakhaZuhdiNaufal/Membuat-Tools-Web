@@ -1,4 +1,4 @@
-name: Deploy CODEFORGE to GitHub Pages
+name: Deploy Tools Web to GitHub Pages
 
 on:
   push:

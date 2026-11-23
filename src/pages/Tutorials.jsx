@@ -40,7 +40,7 @@ export default function Tutorials() {
             <span>Developer Learning Center</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black tracking-tight">
-            Tutorial & Panduan Praktis CODEFORGE
+            Tutorial & Panduan Praktis Tools Web
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-brand-light/80 leading-relaxed">
             Kumpulan panduan komprehensif mulai dari dasar prompting, teknik debugging berbantuan AI, hingga strategi refactoring kode modern.

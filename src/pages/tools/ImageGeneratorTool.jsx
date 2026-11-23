@@ -269,7 +269,7 @@ export default function ImageGeneratorTool() {
                 href={currentImage}
                 target="_blank"
                 rel="noreferrer"
-                download="codeforge-ai-image.jpg"
+                download="tools-web-ai-image.jpg"
                 className="px-3 py-1 bg-brand-primary text-white text-xs font-bold rounded-xl hover:bg-brand-secondary transition-colors flex items-center space-x-1"
               >
                 <Download className="w-3.5 h-3.5" />

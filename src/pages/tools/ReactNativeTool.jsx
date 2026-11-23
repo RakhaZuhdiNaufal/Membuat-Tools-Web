@@ -76,7 +76,7 @@ export default function MobileDashboardScreen() {
 
       {/* Mobile Top Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>CODEFORGE <Text style={styles.accentText}>MOBILE</Text></Text>
+        <Text style={styles.headerTitle}>TOOLS WEB <Text style={styles.accentText}>MOBILE</Text></Text>
         <Text style={styles.headerSubtitle}>React Native Mobile Architecture</Text>
       </View>
 
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
             <div className="w-full h-full bg-[#F7F9F7] rounded-[32px] overflow-hidden flex flex-col pt-7 relative text-[#17251D]">
               {/* Header Native */}
               <div className="bg-[#0B251B] p-4 text-white">
-                <h3 className="text-sm font-black tracking-tight">CODEFORGE <span className="text-[#67B58A]">MOBILE</span></h3>
+                <h3 className="text-sm font-black tracking-tight">TOOLS WEB <span className="text-[#67B58A]">MOBILE</span></h3>
                 <p className="text-[10px] text-[#E9F4ED]/80">React Native Active</p>
               </div>
 

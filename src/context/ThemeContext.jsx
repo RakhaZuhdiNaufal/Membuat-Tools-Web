@@ -4,7 +4,7 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('codeforge_theme') || 'light';
+    return localStorage.getItem('toolsweb_theme') || localStorage.getItem('codeforge_theme') || 'light';
   });
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export function ThemeProvider({ children }) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('codeforge_theme', theme);
+    localStorage.setItem('toolsweb_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

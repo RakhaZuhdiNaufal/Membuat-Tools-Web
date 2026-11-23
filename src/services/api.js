@@ -1,5 +1,5 @@
 /**
- * CODEFORGE API Client
+ * Tools Web API Client
  * Direct Anthropic Claude API Integration (No Google Apps Script required)
  * Includes direct browser access with API Key, intelligent fallback, and local persistence.
  */
@@ -7,12 +7,12 @@
 import { INITIAL_COURSES } from './mockData';
 
 const STORAGE_KEYS = {
-  TOKEN: 'codeforge_token',
-  USER: 'codeforge_user',
-  ANTHROPIC_KEY: 'codeforge_anthropic_api_key',
-  LOCAL_ACTIVITIES: 'codeforge_local_activities',
-  LOCAL_PROGRESS: 'codeforge_local_progress',
-  LOCAL_USERS: 'codeforge_local_users'
+  TOKEN: 'toolsweb_token',
+  USER: 'toolsweb_user',
+  ANTHROPIC_KEY: 'toolsweb_anthropic_api_key',
+  LOCAL_ACTIVITIES: 'toolsweb_local_activities',
+  LOCAL_PROGRESS: 'toolsweb_local_progress',
+  LOCAL_USERS: 'toolsweb_local_users'
 };
 
 const DEFAULT_MODEL = import.meta.env.VITE_ANTHROPIC_MODEL || 'claude-sonnet-4-6';
@@ -133,7 +133,7 @@ function getLocalUsers() {
         id: 'usr_demo_01',
         full_name: 'Alex Developer',
         username: 'alexdev',
-        email: 'developer@codeforge.dev',
+        email: 'developer@toolsweb.dev',
         password_hash: '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8',
         profile_picture: 'https://api.dicebear.com/7.x/identicon/svg?seed=alexdev',
         created_at: new Date(Date.now() - 7 * 86400000).toISOString()
@@ -305,7 +305,7 @@ export const api = {
 
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE AI Assistant & Prompt Chat, asisten coding profesional ditenagai oleh Anthropic Claude.
+        const sys = `Anda adalah Tools Web AI Assistant & Prompt Chat, asisten coding profesional ditenagai oleh Anthropic Claude.
 Anda menguasai seluruh spektrum pengembangan software secara luas:
 1. Game Development: Game berbasis React, HTML5 Canvas, Mini Game (Tic-Tac-Toe, Snake, Pong, Kuis Pilihan Ganda / Trivia, Memory Card, Game Logika & Puzzle).
 2. Full-Stack Web Applications: Sistem CRUD lengkap, E-Commerce, Toko Online & Keranjang, Sistem Autentikasi / Multi-role Auth, Admin Dashboard, Manajemen Tugas (Kanban / ToDo), Real-time Chat, dan integrasi Database.
@@ -352,7 +352,7 @@ Gaya respon Anda:
 
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE Senior React Engineer, Game Creator & Full-Stack Architect.
+        const sys = `Anda adalah Tools Web Senior React Engineer, Game Creator & Full-Stack Architect.
 Tugas Anda:
 Hasilkan komponen web, mini-game interaktif, atau antarmuka dashboard full-stack siap pakai menggunakan HTML/JSX dan styling Tailwind CSS berdasarkan instruksi pengguna.
 
@@ -367,7 +367,7 @@ Kemampuan yang didukung:
 
 Panduan Desain & Kode:
 - HINDARI penggunaan emoji di judul atau nama komponen agar tampilan bersih dan profesional.
-- Gunakan tema warna CODEFORGE: Dark Green (#123D2A), Secondary (#245C40), Accent Green (#67B58A), dan background bersih.
+- Gunakan tema warna Tools Web: Dark Green (#123D2A), Secondary (#245C40), Accent Green (#67B58A), dan background bersih.
 - Pastikan kode dapat langsung dirender secara visual di Live Preview sandbox.
 - JANGAN sertakan tag pembungkus markdown (\`\`\`html atau \`\`\`jsx) di luar kode agar preview dapat langsung menampilkannya secara instan.`;
 
@@ -393,7 +393,7 @@ Panduan Desain & Kode:
 
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE React Native & Expo Mobile Architect.
+        const sys = `Anda adalah Tools Web React Native & Expo Mobile Architect.
 Tugas:
 Hasilkan komponen React Native (JSX) lengkap dan siap pakai sesuai instruksi pengguna.
 Aturan:
@@ -424,7 +424,7 @@ Aturan:
 
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE Full-Stack React & PHP Architect.
+        const sys = `Anda adalah Tools Web Full-Stack React & PHP Architect.
 Mode: ${mode}
 Tugas:
 1. Hubungkan frontend React dengan backend PHP REST API.
@@ -473,7 +473,7 @@ Tugas:
       scenes: [
         { id: 1, title: 'Scene 1: React Component Assembly', duration: '0:00 - 0:05', visual: 'Antarmuka React JSX modular bersinar dengan gradasi hijau tua dan partikel state dinamis.', camera: 'Smooth 3D Macro Zoom In' },
         { id: 2, title: 'Scene 2: React Native Mobile Sync', duration: '0:05 - 0:10', visual: 'Pergerakan kamera 360° menyorot sinkronisasi data instan antara web React dan aplikasi React Native.', camera: '360° Orbital Pan' },
-        { id: 3, title: 'Scene 3: Production Climax & CTA', duration: '0:10 - 0:15', visual: 'Logo CODEFORGE memancarkan gelombang neon berdenyut dengan tarikan kamera sinematik mundur 60fps.', camera: 'Dramatic Slow Pull Back' }
+        { id: 3, title: 'Scene 3: Production Climax & CTA', duration: '0:10 - 0:15', visual: 'Logo Tools Web memancarkan gelombang neon berdenyut dengan tarikan kamera sinematik mundur 60fps.', camera: 'Dramatic Slow Pull Back' }
       ]
     };
   },
@@ -493,7 +493,7 @@ Tugas:
     const hasKey = !!getAnthropicKey();
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE Code Explainer. Bedah kode berikut: fungsi utama, alur kerja step-by-step, konsep kunci, dan kompleksitas Big O. Bahasa: ${language}`;
+        const sys = `Anda adalah Tools Web Code Explainer. Bedah kode berikut: fungsi utama, alur kerja step-by-step, konsep kunci, dan kompleksitas Big O. Bahasa: ${language}`;
         const explanation = await callAnthropicDirect(sys, code);
         recordLocalActivity(user_id, 'Code Explainer', 'Penjelasan kode ' + language, 'Success');
         return { status: 'success', explanation };
@@ -512,7 +512,7 @@ Tugas:
     const hasKey = !!getAnthropicKey();
     if (hasKey) {
       try {
-        const sys = `Anda adalah CODEFORGE Bug Finder. Identifikasi potensi bug, akar masalah, rekomendasi, dan berikan kode perbaikan lengkap.`;
+        const sys = `Anda adalah Tools Web Bug Finder. Identifikasi potensi bug, akar masalah, rekomendasi, dan berikan kode perbaikan lengkap.`;
         const analysis = await callAnthropicDirect(sys, code);
         recordLocalActivity(user_id, 'Bug Finder', 'Analisis bug ' + language, 'Success');
         return { status: 'success', analysis };
@@ -941,7 +941,7 @@ function generateSimulatedReactComponent(prompt = '') {
 
 function generateSimulatedReactNativeCode(prompt, screenType) {
   return `/**
- * CODEFORGE React Native Mobile Studio
+ * Tools Web React Native Mobile Studio
  * Target: React Native (Expo / Bare CLI)
  * Konsep: ${prompt}
  */
@@ -972,7 +972,7 @@ export default function MobileScreen() {
       
       {/* Header Mobile */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>CODEFORGE <Text style={styles.accentText}>MOBILE</Text></Text>
+        <Text style={styles.headerTitle}>TOOLS WEB <Text style={styles.accentText}>MOBILE</Text></Text>
         <Text style={styles.headerSubtitle}>React Native Mobile Architecture</Text>
       </View>
 
@@ -1108,7 +1108,7 @@ const styles = StyleSheet.create({
 function generateSimulatedReactPhpIntegration(reactCode, mode) {
   return `<?php
 /**
- * CODEFORGE Backend REST API (api.php)
+ * Tools Web Backend REST API (api.php)
  * Dirancang untuk melayani Frontend React & Mobile React Native
  * Mode: ${mode}
  */

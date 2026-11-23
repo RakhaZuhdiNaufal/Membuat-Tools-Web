@@ -69,7 +69,7 @@ export default function Sidebar({
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-1.5">
                     <span className="font-extrabold tracking-tight text-lg text-white">
-                      CODE<span className="text-brand-accent">FORGE</span>
+                      TOOLS <span className="text-brand-accent">WEB</span>
                     </span>
                     <span className="px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-brand-accent/20 text-brand-accent rounded">
                       MVP

@@ -1,5 +1,5 @@
 /**
- * CODEFORGE - AI Coding Tools Platform
+ * Tools Web - AI Coding Tools Platform
  * Backend Google Apps Script Web App
  * 
  * Features:
@@ -37,7 +37,7 @@ function doGet(e) {
   const action = e && e.parameter && e.parameter.action;
   
   if (action === 'ping') {
-    return createJsonResponse({ status: 'success', message: 'CODEFORGE API is active', timestamp: new Date().toISOString() });
+    return createJsonResponse({ status: 'success', message: 'Tools Web API is active', timestamp: new Date().toISOString() });
   }
 
   if (action === 'setup') {
@@ -51,7 +51,7 @@ function doGet(e) {
 
   return createJsonResponse({
     status: 'success',
-    message: 'Welcome to CODEFORGE Backend API. Send POST requests with action and payload.',
+    message: 'Welcome to Tools Web Backend API. Send POST requests with action and payload.',
     endpoints: [
       'registerUser', 'loginUser', 'logoutUser', 'validateSession', 'updateProfile', 'changePassword',
       'generateCode', 'explainCode', 'findBugs', 'optimizeCode', 'generateSQL', 'generateHTMLCSS',
@@ -338,7 +338,7 @@ function seedInitialCourses(ss) {
 // ==========================================
 
 function hashPassword(password, salt) {
-  const secretSalt = salt || 'CODEFORGE_SECURITY_SALT_2026';
+  const secretSalt = salt || 'TOOLSWEB_SECURITY_SALT_2026';
   const rawBytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, password + secretSalt);
   return rawBytes.map(byte => ('0' + (byte & 0xFF).toString(16)).slice(-2)).join('');
 }
@@ -399,7 +399,7 @@ function registerUser(payload) {
 
   return {
     status: 'success',
-    message: 'Pendaftaran berhasil! Selamat datang di CODEFORGE.',
+    message: 'Pendaftaran berhasil! Selamat datang di Tools Web.',
     token: session.sessionId,
     user: {
       id: userId,
@@ -721,7 +721,7 @@ function generateCode(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE AI Code Generator, asisten pemrograman tingkat lanjut.
+  const systemPrompt = `Anda adalah Tools Web AI Code Generator, asisten pemrograman tingkat lanjut.
 Tugas Anda adalah menghasilkan kode bersih, optimal, terstruktur rapi, dan modular berdasarkan instruksi pengguna.
 Bahasa: ${language || 'JavaScript'}
 Jenis Project: ${project_type || 'General'}
@@ -753,7 +753,7 @@ function explainCode(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE Code Explainer.
+  const systemPrompt = `Anda adalah Tools Web Code Explainer.
 Tugas Anda adalah membedah dan menjelaskan kode yang diberikan dengan struktur berikut:
 1. Ringkasan Fungsi Utama (1-2 kalimat).
 2. Cara Kerja Step-by-Step (poin terperinci).
@@ -784,7 +784,7 @@ function findBugs(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE Bug Finder & Debugger profesional.
+  const systemPrompt = `Anda adalah Tools Web Bug Finder & Debugger profesional.
 Tugas Anda:
 1. Identifikasi bug, potensi crash, edge-case failure, syntax error, atau logic error dalam kode.
 2. Jelaskan penyebab error secara mendalam.
@@ -813,7 +813,7 @@ function optimizeCode(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE Code Optimizer.
+  const systemPrompt = `Anda adalah Tools Web Code Optimizer.
 Tugas Anda:
 1. Menganalisis efisiensi komputasi, penggunaan memori, dan clean code.
 2. Identifikasi bottleneck atau redundansi.
@@ -842,7 +842,7 @@ function generateSQL(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE SQL Generator.
+  const systemPrompt = `Anda adalah Tools Web SQL Generator.
 Dialek SQL: ${dialect || 'PostgreSQL / MySQL / Standard SQL'}
 Tugas Anda:
 1. Terjemahkan kebutuhan database pengguna menjadi query SQL yang presisi dan optimal.
@@ -870,7 +870,7 @@ function generateHTMLCSS(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE HTML/CSS Generator.
+  const systemPrompt = `Anda adalah Tools Web HTML/CSS Generator.
 Pilihan style: ${framework || 'Modern Tailwind CSS / Pure CSS'}
 Tugas Anda:
 1. Menghasilkan kode HTML dan CSS modern, responsif, dan indah sesuai deskripsi tampilan website pengguna.
@@ -898,7 +898,7 @@ function chatWithAI(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = system_instructions || `Anda adalah CODEFORGE AI Assistant & Prompt Crafter tingkat lanjut, ditenagai oleh Anthropic Claude.
+  const systemPrompt = system_instructions || `Anda adalah Tools Web AI Assistant & Prompt Crafter tingkat lanjut, ditenagai oleh Anthropic Claude.
 Tugas Anda:
 1. Membantu developer menyusun prompt coding yang efektif, presisi, dan terstruktur.
 2. Menjawab pertanyaan teknis, mendiskusikan arsitektur sistem, dan memberikan rekomendasi best practices.
@@ -966,7 +966,7 @@ function convertHtmlToPhp(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE HTML to PHP Converter & PHP Architect profesional.
+  const systemPrompt = `Anda adalah Tools Web HTML to PHP Converter & PHP Architect profesional.
 Mode Konversi: ${mode || 'Dynamic Modular PHP'}
 Tugas Anda:
 1. Konversi kode HTML yang diberikan menjadi file PHP yang modular, dinamis, dan aman.
@@ -1030,7 +1030,7 @@ function generateVideo(payload) {
     return { status: 'error', message: 'Batas permintaan terlampaui. Harap tunggu beberapa saat.' };
   }
 
-  const systemPrompt = `Anda adalah CODEFORGE AI Video Generator & Motion Director.
+  const systemPrompt = `Anda adalah Tools Web AI Video Generator & Motion Director.
 Gaya: ${style || 'Cinematic Tech Explainer'}
 Durasi Target: ${duration || '15 detik'}
 Tugas:
@@ -1049,7 +1049,7 @@ Tugas:
       scenes: [
         { id: 1, title: 'Opening Scene', duration: '0:00 - 0:04', visual: 'Futuristic code IDE glowing in dark green emerald neon lights with floating digital particles.' },
         { id: 2, title: 'Transformation Scene', duration: '0:04 - 0:09', visual: 'High-speed camera zoom into holographic syntax structure converting HTML directly into PHP backend logic.' },
-        { id: 3, title: 'Outro Climax', duration: '0:09 - 0:15', visual: 'CODEFORGE logo crystalizing with sleek glowing aura and smooth 60fps cinematic camera pullback.' }
+        { id: 3, title: 'Outro Climax', duration: '0:09 - 0:15', visual: 'Tools Web logo crystalizing with sleek glowing aura and smooth 60fps cinematic camera pullback.' }
       ]
     };
   } catch (err) {
@@ -1234,7 +1234,7 @@ function submitChallenge(payload) {
   }
 
   // Assess code via Anthropic API
-  const systemPrompt = `Anda adalah CODEFORGE Coding Challenge Evaluator.
+  const systemPrompt = `Anda adalah Tools Web Coding Challenge Evaluator.
 Evaluasi jawaban coding siswa berikut terhadap instruksi tantangan:
 Tantangan: ${targetChallenge.title}
 Deskripsi: ${targetChallenge.description}

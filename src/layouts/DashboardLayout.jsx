@@ -16,7 +16,7 @@ export default function DashboardLayout() {
         <div className="flex flex-col items-center space-y-3">
           <LoadingSpinner size="lg" />
           <p className="text-xs font-semibold text-brand-text-secondary dark:text-dark-muted font-mono tracking-wider">
-            MEMUAT CODEFORGE...
+            MEMUAT TOOLS WEB...
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function DashboardLayout() {
         </main>
 
         <footer className="py-4 px-6 border-t border-brand-border dark:border-dark-border text-center text-xs text-brand-text-secondary dark:text-dark-muted">
-          <p>© {new Date().getFullYear()} CODEFORGE – AI-Powered Coding Tools Platform. Built with React & Anthropic API.</p>
+          <p>© {new Date().getFullYear()} Tools Web – AI-Powered Coding Tools Platform. Built with React & Anthropic API.</p>
         </footer>
       </div>
     </div>

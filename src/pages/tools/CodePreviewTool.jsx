@@ -61,7 +61,7 @@ function formatInlineText(text) {
   return parts;
 }
 
-const DEFAULT_INITIAL_COMPONENT = `<!-- React Component: Modern CODEFORGE Card -->
+const DEFAULT_INITIAL_COMPONENT = `<!-- React Component: Modern Tools Web Card -->
 <div class="max-w-md mx-auto my-6 bg-white dark:bg-[#0B251B] rounded-3xl overflow-hidden shadow-xl border border-[#E5EBE6] dark:border-[#1A4532] transition-all hover:shadow-2xl">
   <div class="p-6 bg-gradient-to-r from-[#123D2A] to-[#245C40] text-white">
     <div class="flex items-center justify-between">

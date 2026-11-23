@@ -42,7 +42,7 @@ export default function Navbar({ onMenuClick }) {
     if (path.startsWith('/courses')) return 'Interactive Courses';
     if (path.startsWith('/profile')) return 'User Profile';
     if (path.startsWith('/settings')) return 'Preferences & Settings';
-    return 'CODEFORGE';
+    return 'Tools Web';
   };
 
   const handleLogout = async () => {
@@ -131,7 +131,7 @@ export default function Navbar({ onMenuClick }) {
               <div className="p-3 text-xs space-y-2">
                 <div className="p-2.5 rounded-xl bg-brand-light/50 dark:bg-dark-card/50 border border-brand-border/50 dark:border-dark-border/50">
                   <p className="font-semibold text-brand-primary dark:text-brand-accent">
-                    Selamat datang di CODEFORGE!
+                    Selamat datang di Tools Web!
                   </p>
                   <p className="text-[11px] text-brand-text-secondary dark:text-dark-muted mt-0.5">
                     Mulai gunakan AI Coding Tools atau asah keahlian di menu Interactive Courses.

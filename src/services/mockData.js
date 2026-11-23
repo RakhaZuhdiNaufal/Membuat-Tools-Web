@@ -1,5 +1,5 @@
 /**
- * CODEFORGE Mock & Seed Data
+ * Tools Web Mock & Seed Data
  * Provides default data structures, initial curriculum, tutorials,
  * and offline/local storage persistence engine.
  */
@@ -32,7 +32,7 @@ HTML (**HyperText Markup Language**) adalah batu bata penyusun dari setiap halam
   </head>
   <body>
     <h1>Halo, Dunia!</h1>
-    <p>Selamat datang di platform belajar CODEFORGE.</p>
+    <p>Selamat datang di platform belajar Tools Web.</p>
   </body>
 </html>
 \`\`\``,
@@ -77,7 +77,7 @@ Website menjadi interaktif melalui hyperlink dan media visual:
 
 \`\`\`html
 <!-- Link eksternal -->
-<a href="https://codeforge.dev" target="_blank" rel="noopener">Kunjungi CODEFORGE</a>
+<a href="https://github.com/RakhaZuhdiNaufal/Membuat-Tools-Web" target="_blank" rel="noopener">Kunjungi Tools Web</a>
 
 <!-- Gambar responsif -->
 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" alt="Laptop dengan kode programming" width="600" />
@@ -116,7 +116,7 @@ Formulir digunakan untuk registrasi, login, pencarian, dan feedback pengguna.
         lesson_id: 'l_html_03',
         title: 'Membuat Halaman Profil Sederhana',
         description: 'Buat struktur HTML profil pribadi yang terdiri dari judul nama dan dua paragraf biografi singkat.',
-        instructions: '1. Buat elemen <h1> berisi nama Anda.\n2. Buat elemen <p> pertama berisi profesi/minat coding.\n3. Buat elemen <p> kedua berisi tujuan belajar di CODEFORGE.',
+        instructions: '1. Buat elemen <h1> berisi nama Anda.\n2. Buat elemen <p> pertama berisi profesi/minat coding.\n3. Buat elemen <p> kedua berisi tujuan belajar di Tools Web.',
         expected_result: '<h1>Nama Anda</h1>\n<p>Saya seorang Web Developer pemula...</p>\n<p>Tujuan saya belajar adalah menguasai AI tools...</p>',
         difficulty: 'Easy',
         starter_code: '<!-- Tulis jawaban HTML Anda di sini -->\n<h1>Budi Santoso</h1>\n'
@@ -259,7 +259,7 @@ CSS Grid sangat ideal untuk tata letak halaman komprehensif:
 Gunakan \`const\` untuk variabel yang nilainya konstan dan \`let\` jika nilainya dapat berubah. Hindari penggunaan \`var\`.
 
 Tipe Data Primitif:
-- **String**: \`"CODEFORGE"\`
+- **String**: \`"Tools Web"\`
 - **Number**: \`42\` atau \`3.14\`
 - **Boolean**: \`true\` atau \`false\`
 - **Undefined**: Belum diinisialisasi
@@ -375,11 +375,11 @@ export const INITIAL_TUTORIALS = [
   {
     id: 'tut-01',
     category: 'Getting Started',
-    title: 'Memulai Perjalanan Coding Anda Bersama CODEFORGE',
+    title: 'Memulai Perjalanan Coding Anda Bersama Tools Web',
     duration: '4 menit baca',
-    description: 'Panduan komprehensif memahami antarmuka, navigasi tools, dan cara kerja ekosistem CODEFORGE.',
-    content: `### Selamat Datang di CODEFORGE!
-CODEFORGE dirancang khusus untuk memadukan kecerdasan buatan terdepan (Anthropic Claude) dengan kurikulum pemrograman praktis.
+    description: 'Panduan komprehensif memahami antarmuka, navigasi tools, dan cara kerja ekosistem Tools Web.',
+    content: `### Selamat Datang di Tools Web!
+Tools Web dirancang khusus untuk memadukan kecerdasan buatan terdepan (Anthropic Claude) dengan kurikulum pemrograman praktis.
 
 #### 3 Langkah Cepat Memulai:
 1. **Jelajahi Dashboard**: Lihat statistik penggunaan AI, riwayat aktivitas terbaru, dan progres kursus Anda.
@@ -393,7 +393,7 @@ CODEFORGE dirancang khusus untuk memadukan kecerdasan buatan terdepan (Anthropic
     duration: '5 menit baca',
     description: 'Pelajari cara memilih bahasa pemrograman, menentukan jenis proyek, dan merumuskan instruksi yang akurat.',
     content: `### Memaksimalkan AI Code Generator
-Code Generator di CODEFORGE bukan hanya sekadar pelengkap kode; ia dapat menyusun fungsi utuh, skema antarmuka, hingga arsitektur modular.
+Code Generator di Tools Web bukan hanya sekadar pelengkap kode; ia dapat menyusun fungsi utuh, skema antarmuka, hingga arsitektur modular.
 
 #### Langkah-Langkah:
 1. Pilih **Bahasa Pemrograman** (JavaScript, Python, HTML/CSS, SQL, Java, C#, PHP, Dart).

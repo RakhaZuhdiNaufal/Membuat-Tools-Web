@@ -67,7 +67,7 @@ export default function Register() {
             <Terminal className="w-6 h-6 text-brand-accent" />
           </div>
           <span className="text-2xl font-black tracking-tight text-brand-dark dark:text-white">
-            CODE<span className="text-brand-accent">FORGE</span>
+            TOOLS <span className="text-brand-accent">WEB</span>
           </span>
         </div>
 

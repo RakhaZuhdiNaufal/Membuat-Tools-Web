@@ -1,6 +1,6 @@
-# CODEFORGE – AI Coding Tools Platform
+# Tools Web – AI Coding Tools Platform
 
-CODEFORGE adalah platform penyedia berbagai AI-powered coding tools yang dirancang untuk membantu programmer menulis, membedah, mengoptimalkan, dan men-debug kode secara instan, serta belajar melalui interactive courses dan coding challenges yang dievaluasi secara otomatis oleh Anthropic Claude AI.
+Tools Web adalah platform penyedia berbagai AI-powered coding tools yang dirancang untuk membantu programmer menulis, membedah, mengoptimalkan, dan men-debug kode secara instan, serta belajar melalui interactive courses dan coding challenges yang dievaluasi secara otomatis oleh Anthropic Claude AI.
 
 ---
 
@@ -83,7 +83,7 @@ CODEFORGE adalah platform penyedia berbagai AI-powered coding tools yang diranca
 ## 📁 Struktur Project
 
 ```text
-CODEFORGE/
+Tools-Web/
 ├── public/
 ├── src/
 │   ├── assets/
@@ -132,7 +132,7 @@ CODEFORGE/
 
 ### Langkah 1: Buat Google Spreadsheet
 1. Buka [Google Sheets](https://sheets.new) di browser Anda.
-2. Beri nama spreadsheet, misalnya **`CODEFORGE Database`**.
+2. Beri nama spreadsheet, misalnya **`Tools Web Database`**.
 
 ### Langkah 2: Buka Apps Script Editor
 1. Di dalam spreadsheet tersebut, klik menu **Extensions > Apps Script**.
@@ -153,7 +153,7 @@ CODEFORGE/
 1. Di pojok kanan atas editor Apps Script, klik tombol biru **Deploy > New deployment**.
 2. Klik ikon gerigi di sebelah *Select type*, pilih **Web app**.
 3. Isi konfigurasi deployment:
-   - **Description**: `CODEFORGE Production API v1`
+   - **Description**: `Tools Web Production API v1`
    - **Execute as**: `Me (email anda)`
    - **Who has access**: `Anyone` *(Penting agar frontend GitHub Pages dapat mengakses API)*
 4. Klik **Deploy**.
@@ -168,7 +168,7 @@ CODEFORGE/
 Anda dapat menghubungkan frontend dengan salah satu dari dua cara berikut:
 
 ### Cara 1: Melalui Pengaturan Aplikasi (Tanpa Perlu Rebuild)
-1. Buka website CODEFORGE di browser.
+1. Buka website Tools Web di browser.
 2. Masuk ke menu **Settings** (ikon gerigi).
 3. Pada bagian **Google Apps Script & Database Integrasi**, tempelkan URL Web App Anda ke kolom yang tersedia.
 4. Klik tombol **Simpan URL** lalu klik **Uji Koneksi**.
@@ -181,7 +181,7 @@ Anda dapat menghubungkan frontend dengan salah satu dari dua cara berikut:
 2. Jalankan build ulang: `npm run build`.
 
 > **Catatan Mode Offline / Demo:**
-> Jika URL Google Apps Script belum diisi, CODEFORGE secara otomatis mengaktifkan **Local Offline Engine**. Semua fitur (registrasi, login, 6 AI tools, courses, coding challenges, hingga profil) tetap berfungsi penuh dan persisten di browser untuk keperluan pengujian dan review!
+> Jika URL Google Apps Script belum diisi, Tools Web secara otomatis mengaktifkan **Local Offline Engine**. Semua fitur (registrasi, login, 6 AI tools, courses, coding challenges, hingga profil) tetap berfungsi penuh dan persisten di browser untuk keperluan pengujian dan review!
 
 ---
 
@@ -190,21 +190,21 @@ Anda dapat menghubungkan frontend dengan salah satu dari dua cara berikut:
 ### Opsi A: Menggunakan GitHub Actions (Otomatis & Direkomendasikan)
 File workflow sudah disediakan di [`.github/workflows/deploy.yml`](file:///c:/Users/Ani%20Winarti/Downloads/Project%20API/.github/workflows/deploy.yml).
 
-1. Buat repository baru di GitHub bernama `codeforge`.
+1. Buat repository baru di GitHub bernama `Membuat-Tools-Web`.
 2. Push seluruh source code ke repository Anda:
    ```bash
    git init
    git add .
-   git commit -m "feat: initial commit CODEFORGE platform"
+   git commit -m "feat: initial commit Tools Web platform"
    git branch -M main
-   git remote add origin https://github.com/USERNAME/codeforge.git
+   git remote add origin https://github.com/RakhaZuhdiNaufal/Membuat-Tools-Web.git
    git push -u origin main
    ```
 3. Di halaman GitHub repository Anda:
    - Buka **Settings > Pages**.
    - Pada bagian **Build and deployment > Source**, pilih **GitHub Actions**.
 4. Workflow akan otomatis mem-build dan mempublikasikan website ke:
-   `https://USERNAME.github.io/codeforge/`
+   `https://RakhaZuhdiNaufal.github.io/Membuat-Tools-Web/`
 
 ### Opsi B: Build Manual
 1. Jalankan build di lokal:
@@ -218,6 +218,6 @@ File workflow sudah disediakan di [`.github/workflows/deploy.yml`](file:///c:/Us
 ## 🧪 Akun Demo untuk Pengujian Cepat
 
 Jika ingin langsung mencoba platform tanpa registrasi manual:
-- **Email**: `developer@codeforge.dev`
+- **Email**: `developer@toolsweb.dev`
 - **Password**: `password`
 - Atau cukup klik tombol **"Gunakan Akun Demo (1-Click Login)"** di halaman Login.

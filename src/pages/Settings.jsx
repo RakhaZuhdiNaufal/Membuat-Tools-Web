@@ -129,7 +129,7 @@ export default function Settings() {
         </div>
 
         <p className="text-xs text-brand-text-secondary dark:text-dark-muted leading-relaxed">
-          CODEFORGE terhubung langsung ke <strong>Anthropic Claude API</strong> tanpa memerlukan perantara Google Apps Script. Masukkan API Key Anthropic Anda di bawah untuk mengaktifkan AI secara live:
+          Tools Web terhubung langsung ke <strong>Anthropic Claude API</strong> tanpa memerlukan perantara Google Apps Script. Masukkan API Key Anthropic Anda di bawah untuk mengaktifkan AI secara live:
         </p>
 
         {connectionStatus && (

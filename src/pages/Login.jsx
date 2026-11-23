@@ -37,10 +37,10 @@ export default function Login() {
   };
 
   const handleDemoLogin = async () => {
-    setEmail('developer@codeforge.dev');
+    setEmail('developer@toolsweb.dev');
     setPassword('password');
     setSubmitting(true);
-    const result = await login('developer@codeforge.dev', 'password', true);
+    const result = await login('developer@toolsweb.dev', 'password', true);
     setSubmitting(false);
     if (result.success) {
       navigate('/dashboard');
@@ -56,7 +56,7 @@ export default function Login() {
             <Terminal className="w-6 h-6 text-brand-accent" />
           </div>
           <span className="text-2xl font-black tracking-tight text-brand-dark dark:text-white">
-            CODE<span className="text-brand-accent">FORGE</span>
+            TOOLS <span className="text-brand-accent">WEB</span>
           </span>
         </div>
 
@@ -162,7 +162,7 @@ export default function Login() {
                   <LoadingSpinner size="sm" className="text-white mr-2" />
                 ) : (
                   <>
-                    <span>Login ke CODEFORGE</span>
+                    <span>Login ke Tools Web</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </>
                 )}
