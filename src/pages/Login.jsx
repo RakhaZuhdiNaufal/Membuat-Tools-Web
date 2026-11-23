@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  Terminal,
+  Mail,
+  Lock,
   Eye,
   EyeOff,
-  Lock,
-  Mail,
   ArrowRight,
   Sparkles,
   Sun,
   Moon,
-  ShieldCheck,
-  Zap,
-  GraduationCap,
-  Database,
-  CheckCircle2,
-  Code2
+  Terminal,
+  ShieldCheck
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { LoadingSpinner } from '../components/LoadingState';
+import AuthIllustration from '../components/AuthIllustration';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -66,325 +62,195 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg dark:bg-dark-bg flex flex-col lg:grid lg:grid-cols-12 selection:bg-brand-accent selection:text-brand-dark transition-colors">
+    <div className="min-h-screen bg-[#18191C] text-slate-100 flex items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden font-sans selection:bg-[#0284C7] selection:text-white">
       
       {/* ========================================================= */}
-      {/* LEFT SIDE: Brand & Feature Showcase (Desktop / Tablet)   */}
+      {/* BACKGROUND DECORATIVE ORNAMENTS (As seen in the Mockup)   */}
       {/* ========================================================= */}
-      <div className="hidden lg:flex lg:col-span-5 xl:col-span-5 bg-gradient-to-br from-[#07150F] via-[#0B251B] to-[#123D2A] text-white p-10 xl:p-14 flex-col justify-between relative overflow-hidden border-r border-[#1A4532]">
-        
-        {/* Ambient Glow Effects */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-accent/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-secondary/30 rounded-full blur-3xl pointer-events-none" />
-        
-        {/* Subtle Grid Pattern Overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(#67B58A_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+      {/* Top Dashed Green Curved Line */}
+      <div className="absolute -top-32 -left-20 w-[420px] h-[320px] border-4 border-dashed border-[#22C55E]/40 rounded-[120px] pointer-events-none transform -rotate-12" />
+      <div className="absolute top-10 left-1/3 w-64 h-64 border-2 border-dashed border-[#22C55E]/20 rounded-full pointer-events-none" />
 
-        {/* Top: Logo & Version */}
-        <div className="relative z-10">
-          <div className="flex items-center space-x-3">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-secondary to-[#123D2A] border border-brand-accent/40 flex items-center justify-center shadow-glow">
-              <Terminal className="w-5 h-5 text-brand-accent" />
-            </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <span className="text-xl font-extrabold tracking-tight">
-                  TOOLS <span className="text-brand-accent">WEB</span>
-                </span>
-                <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-brand-accent/20 text-brand-accent rounded-full border border-brand-accent/30">
-                  v1.0 LIVE
-                </span>
-              </div>
-              <p className="text-[11px] text-brand-accent/70 font-mono tracking-wider">
-                AI DEVELOPER STUDIO
-              </p>
-            </div>
-          </div>
-        </div>
+      {/* Bottom Right Glowing Solid Curved Lines (Blue & Green) */}
+      <div className="absolute -bottom-24 -right-16 w-[450px] h-[400px] border-[5px] border-[#0284C7]/40 rounded-[100px] pointer-events-none transform rotate-12" />
+      <div className="absolute -bottom-36 right-36 w-[350px] h-[350px] border-[4px] border-[#22C55E]/30 rounded-[90px] pointer-events-none transform -rotate-6" />
 
-        {/* Center: Hero Value Proposition & Interactive Cards */}
-        <div className="relative z-10 my-auto py-8 space-y-6">
-          <div className="space-y-3">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-brand-light/90 backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
-              <span>Ditenagai Anthropic Claude 3.5 Sonnet</span>
-            </div>
-            <h1 className="text-2xl xl:text-3xl font-black tracking-tight leading-tight">
-              Kembangkan Software & Uji Kemampuan dengan AI Cerdas
-            </h1>
-            <p className="text-xs xl:text-sm text-brand-light/80 leading-relaxed">
-              Ekosistem lengkap bagi programmer: 6 specialized AI tools, live code preview sandbox, serta kursus fundamental berpenilaian otomatis.
-            </p>
-          </div>
+      {/* Subtle Glow Spheres */}
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-[#0284C7]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#22C55E]/10 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Interactive Feature Cards */}
-          <div className="space-y-3">
-            <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-md flex items-start space-x-3.5 hover:bg-white/[0.07] transition-all">
-              <div className="w-8 h-8 rounded-xl bg-brand-accent/20 border border-brand-accent/30 flex items-center justify-center flex-shrink-0 text-brand-accent mt-0.5">
-                <Code2 className="w-4 h-4" />
-              </div>
-              <div className="text-xs">
-                <h4 className="font-bold text-white">6 AI Specialized Studios</h4>
-                <p className="text-brand-light/70 text-[11px] mt-0.5 leading-normal">
-                  React Live Sandbox, Mobile React Native, PHP REST API, Image Gen & Video Storyboard.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-md flex items-start space-x-3.5 hover:bg-white/[0.07] transition-all">
-              <div className="w-8 h-8 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center flex-shrink-0 text-amber-300 mt-0.5">
-                <GraduationCap className="w-4 h-4" />
-              </div>
-              <div className="text-xs">
-                <h4 className="font-bold text-white">Interactive Academy & AI Grading</h4>
-                <p className="text-brand-light/70 text-[11px] mt-0.5 leading-normal">
-                  Praktek coding langsung di browser dengan skor kelulusan dan saran perbaikan instan.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-md flex items-start space-x-3.5 hover:bg-white/[0.07] transition-all">
-              <div className="w-8 h-8 rounded-xl bg-emerald-400/20 border border-emerald-400/30 flex items-center justify-center flex-shrink-0 text-emerald-300 mt-0.5">
-                <Database className="w-4 h-4" />
-              </div>
-              <div className="text-xs">
-                <h4 className="font-bold text-white">Cloud Database Google Sheets</h4>
-                <p className="text-brand-light/70 text-[11px] mt-0.5 leading-normal">
-                  Tersinkronisasi otomatis dengan Google Apps Script & offline browser storage.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom: Social Proof & Security Badge */}
-        <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-brand-light/70">
-          <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-4 h-4 text-brand-accent" />
-            <span>SHA-256 Encrypted Session</span>
-          </div>
-          <span className="font-mono text-[11px] text-brand-accent">100% Serverless</span>
-        </div>
+      {/* Floating Theme Switcher (Top Right Corner) */}
+      <div className="fixed top-6 right-6 z-50">
+        <button
+          onClick={toggleTheme}
+          type="button"
+          className="p-3 rounded-2xl bg-[#22242A]/80 hover:bg-[#2B2E36] border border-white/10 text-slate-300 hover:text-white backdrop-blur-md shadow-xl transition-all"
+          title={theme === 'dark' ? 'Ganti ke Light Mode' : 'Ganti ke Dark Mode'}
+        >
+          {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-sky-400" />}
+        </button>
       </div>
 
       {/* ========================================================= */}
-      {/* RIGHT SIDE: Interactive Login Form                        */}
+      {/* MAIN FLOATING CARD (Matches Design Mockup)                 */}
       {/* ========================================================= */}
-      <div className="flex-1 lg:col-span-7 xl:col-span-7 flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:p-16 relative">
+      <div className="relative z-10 w-full max-w-5xl bg-white dark:bg-[#111915] text-[#1E293B] dark:text-slate-100 rounded-[32px] sm:rounded-[44px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.65)] overflow-hidden border border-white/10 transition-colors">
         
-        {/* Top Bar: Mobile Brand & Theme Toggle */}
-        <div className="flex items-center justify-between w-full mb-6 sm:mb-8">
-          {/* Mobile-Only Logo */}
-          <div className="flex items-center space-x-2.5 lg:hidden">
-            <div className="w-9 h-9 rounded-xl bg-brand-dark flex items-center justify-center border border-brand-accent/40 shadow-sm">
-              <Terminal className="w-4 h-4 text-brand-accent" />
-            </div>
-            <span className="text-lg font-black tracking-tight text-brand-dark dark:text-white">
-              TOOLS <span className="text-brand-accent">WEB</span>
-            </span>
-          </div>
-
-          <div className="hidden lg:block">
-            {/* Empty placeholder to push toggle right */}
-          </div>
-
-          {/* Theme Switcher Button */}
-          <button
-            onClick={toggleTheme}
-            type="button"
-            className="p-2.5 rounded-xl bg-white dark:bg-dark-surface border border-brand-border dark:border-dark-border text-brand-text-secondary dark:text-dark-muted hover:text-brand-primary dark:hover:text-brand-accent shadow-subtle transition-all"
-            title={theme === 'dark' ? 'Ganti ke Light Mode' : 'Ganti ke Dark Mode'}
-          >
-            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-brand-primary" />}
-          </button>
-        </div>
-
-        {/* Main Card Form */}
-        <div className="max-w-md w-full mx-auto my-auto">
-          {/* Header Title */}
-          <div className="mb-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-text-primary dark:text-dark-text tracking-tight">
-              Selamat Datang Kembali 👋
-            </h2>
-            <p className="mt-1.5 text-xs sm:text-sm text-brand-text-secondary dark:text-dark-muted">
-              Masuk ke akun Anda untuk mengakses AI tools dan progres belajar.
-            </p>
-          </div>
-
-          {/* 🌟 Highlighted 1-Click Demo Login Banner */}
-          <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-brand-accent/15 to-teal-500/10 border border-brand-accent/40 shadow-subtle dark:bg-dark-card/60">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-bold text-brand-primary dark:text-brand-accent uppercase tracking-wider">
-                  Akses Cepat Pengujian
-                </span>
-              </div>
-              <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-600/10 dark:bg-emerald-400/10 text-emerald-700 dark:text-emerald-300 font-semibold">
-                Demo Ready
-              </span>
-            </div>
-            <p className="text-xs text-brand-text-secondary dark:text-dark-muted leading-relaxed mb-3">
-              Ingin meninjau platform tanpa mendaftar manual? Cukup klik tombol di bawah untuk masuk otomatis.
-            </p>
-            <button
-              onClick={handleDemoLogin}
-              disabled={submitting}
-              type="button"
-              className="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-brand-dark bg-brand-accent hover:bg-emerald-400 active:scale-[0.99] shadow-sm transition-all duration-150 flex items-center justify-center space-x-2 group"
-            >
-              <Sparkles className="w-4 h-4 text-brand-dark group-hover:rotate-12 transition-transform" />
-              <span>Gunakan Akun Demo (1-Click Login)</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          {/* Divider */}
-          <div className="relative my-6 text-center">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-brand-border dark:border-dark-border" />
-            </div>
-            <div className="relative inline-block px-3 text-xs uppercase tracking-wider bg-brand-bg dark:bg-dark-bg text-brand-text-secondary dark:text-dark-muted font-semibold">
-              Atau masuk dengan email
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] sm:min-h-[620px]">
+          
+          {/* ===================================================== */}
+          {/* LEFT SECTION: Fluid Wave & Developer Desk Illustration */}
+          {/* ===================================================== */}
+          <div className="lg:col-span-7 relative flex items-center justify-center p-4 sm:p-8 bg-gradient-to-b from-[#F0F7FF] to-white dark:from-[#0E1713] dark:to-[#111915] overflow-hidden">
+            {/* The Custom Vector Illustration */}
+            <div className="w-full max-w-[480px] lg:max-w-none h-[280px] sm:h-[360px] lg:h-full flex items-center justify-center">
+              <AuthIllustration className="w-full h-full max-h-[460px] object-contain drop-shadow-md" />
             </div>
           </div>
 
-          {/* Error Alert */}
-          {error && (
-            <div className="mb-5 p-3.5 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60 rounded-xl text-xs text-red-600 dark:text-red-400 flex items-start space-x-2 animate-fadeIn">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5 flex-shrink-0" />
-              <span>{error}</span>
-            </div>
-          )}
-
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Email Field */}
-            <div>
-              <label className="block text-xs font-semibold text-brand-text-primary dark:text-dark-text mb-1.5">
-                Alamat Email
-              </label>
-              <div className="relative rounded-xl shadow-xs">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-brand-text-secondary dark:text-dark-muted">
-                  <Mail className="w-4 h-4" />
+          {/* ===================================================== */}
+          {/* RIGHT SECTION: Brand, Inputs & Signature Action Button */}
+          {/* ===================================================== */}
+          <div className="lg:col-span-5 flex flex-col justify-center px-6 sm:px-12 py-8 sm:py-12 bg-white dark:bg-[#111915]">
+            
+            <div className="w-full max-w-sm mx-auto">
+              {/* Brand Logo Header (Matches 'docjus' styling in mockup) */}
+              <div className="text-center mb-7 sm:mb-8">
+                <div className="inline-flex items-center justify-center space-x-2.5 mb-1.5">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0284C7] to-[#0369A1] text-white flex items-center justify-center shadow-md">
+                    <Terminal className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#0F172A] dark:text-white">
+                    tools<span className="text-[#0284C7]">web</span>
+                  </span>
                 </div>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="nama@domain.com"
-                  className="block w-full pl-10 pr-3 py-2.5 text-xs sm:text-sm bg-white dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-xl text-brand-text-primary dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all shadow-subtle"
-                  required
-                />
+                <p className="text-xs sm:text-sm font-medium text-[#64748B] dark:text-[#94A3B8]">
+                  Acesse sua conta / Masuk ke akun
+                </p>
               </div>
-            </div>
 
-            {/* Password Field */}
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-semibold text-brand-text-primary dark:text-dark-text">
-                  Password
-                </label>
-                <button
-                  type="button"
-                  onClick={() => setForgotModal(true)}
-                  className="text-xs text-brand-secondary dark:text-brand-accent hover:underline font-medium"
-                >
-                  Lupa Password?
-                </button>
-              </div>
-              <div className="relative rounded-xl shadow-xs">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-brand-text-secondary dark:text-dark-muted">
-                  <Lock className="w-4 h-4" />
+              {/* Error Message */}
+              {error && (
+                <div className="mb-4 p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60 rounded-xl text-xs text-red-600 dark:text-red-400">
+                  {error}
                 </div>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="block w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-white dark:bg-dark-surface border border-brand-border dark:border-dark-border rounded-xl text-brand-text-primary dark:text-dark-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all shadow-subtle"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-brand-text-secondary dark:text-dark-muted hover:text-brand-text-primary dark:hover:text-white transition-colors"
-                  title={showPassword ? 'Sembunyikan password' : 'Lihat password'}
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
+              )}
 
-            {/* Remember Me */}
-            <div className="flex items-center justify-between py-1">
-              <label className="flex items-center space-x-2 text-xs text-brand-text-secondary dark:text-dark-muted cursor-pointer select-none">
-                <input
-                  id="remember-me"
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded text-brand-primary focus:ring-brand-accent border-brand-border dark:border-dark-border dark:bg-dark-card accent-brand-primary"
-                />
-                <span>Ingat saya selama 7 hari</span>
-              </label>
-            </div>
+              {/* Form Inputs (Minimalist Underline / Border Style) */}
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                
+                {/* Email Field */}
+                <div>
+                  <div className="relative border-b-2 border-slate-200 dark:border-slate-700/80 focus-within:border-[#0284C7] dark:focus-within:border-[#38BDF8] transition-colors py-1 flex items-center">
+                    <Mail className="w-4 h-4 text-slate-400 dark:text-slate-500 mr-3 flex-shrink-0" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                      className="w-full bg-transparent text-xs sm:text-sm text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none py-1.5"
+                      required
+                    />
+                  </div>
+                </div>
 
-            {/* Login Submit Button */}
-            <div className="pt-2">
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full flex items-center justify-center py-2.5 px-4 rounded-xl shadow-md text-xs sm:text-sm font-bold text-white bg-brand-primary hover:bg-brand-secondary active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent transition-all duration-150 disabled:opacity-50"
-              >
-                {submitting ? (
-                  <LoadingSpinner size="sm" className="text-white mr-2" />
-                ) : (
-                  <>
-                    <span>Masuk ke Akun Anda</span>
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </>
-                )}
-              </button>
-            </div>
-          </form>
+                {/* Password Field */}
+                <div>
+                  <div className="relative border-b-2 border-slate-200 dark:border-slate-700/80 focus-within:border-[#0284C7] dark:focus-within:border-[#38BDF8] transition-colors py-1 flex items-center">
+                    <Lock className="w-4 h-4 text-slate-400 dark:text-slate-500 mr-3 flex-shrink-0" />
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Senha / Password"
+                      className="w-full bg-transparent text-xs sm:text-sm text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none py-1.5 pr-8"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                      title={showPassword ? 'Sembunyikan' : 'Tampilkan'}
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
+                  </div>
+                </div>
 
-          {/* Footer Register Link */}
-          <div className="mt-6 text-center">
-            <p className="text-xs text-brand-text-secondary dark:text-dark-muted">
-              Belum memiliki akun?{' '}
-              <Link
-                to="/register"
-                className="font-bold text-brand-primary dark:text-brand-accent hover:underline ml-1"
-              >
-                Daftar sekarang gratis
-              </Link>
-            </p>
+                {/* Remember Me & Forgot Password (Matches Mockup) */}
+                <div className="flex items-center justify-between text-[11px] sm:text-xs pt-1">
+                  <label className="flex items-center space-x-1.5 text-slate-500 dark:text-slate-400 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={rememberMe}
+                      onChange={(e) => setRememberMe(e.target.checked)}
+                      className="w-3.5 h-3.5 rounded text-[#0284C7] focus:ring-[#0284C7] border-slate-300 dark:border-slate-600 accent-[#0284C7]"
+                    />
+                    <span>Manter-me conectado</span>
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setForgotModal(true)}
+                    className="text-[#0284C7] dark:text-[#38BDF8] hover:underline font-medium"
+                  >
+                    Esqueceu a senha?
+                  </button>
+                </div>
+
+                {/* SIGNATURE PILL ACTION BUTTON (Exact Match to Mockup) */}
+                <div className="pt-3">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full group relative flex items-center justify-center bg-[#0284C7] hover:bg-[#0369A1] active:scale-[0.99] text-white py-2 px-3 rounded-full shadow-lg shadow-sky-500/25 transition-all duration-200 disabled:opacity-50"
+                  >
+                    {/* Left Circular Arrow Badge */}
+                    <span className="absolute left-1.5 w-8 h-8 rounded-full bg-[#22C55E] flex items-center justify-center text-white shadow-sm group-hover:translate-x-0.5 transition-transform">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                    
+                    {/* Center Text */}
+                    <span className="text-xs sm:text-sm font-bold tracking-wider uppercase pl-6 pr-2">
+                      {submitting ? 'PROCESSANDO...' : 'ENTRAR'}
+                    </span>
+                  </button>
+                </div>
+
+                {/* Quick 1-Click Demo Login Pill */}
+                <div className="pt-2 text-center">
+                  <button
+                    onClick={handleDemoLogin}
+                    disabled={submitting}
+                    type="button"
+                    className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 border border-emerald-200 dark:border-emerald-800/40 transition-colors"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>1-Click Demo Login (Akun Pengujian)</span>
+                  </button>
+                </div>
+
+                {/* Bottom Register Link (Matches "Crie uma conta") */}
+                <div className="pt-4 text-center">
+                  <Link
+                    to="/register"
+                    className="text-xs text-[#0284C7] dark:text-[#38BDF8] hover:underline font-semibold"
+                  >
+                    Crie uma conta / Daftar akun baru
+                  </Link>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-
-        {/* Bottom System Status */}
-        <div className="mt-8 pt-4 border-t border-brand-border/60 dark:border-dark-border/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-text-secondary dark:text-dark-muted gap-2">
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Database Google Sheets Terhubung</span>
-          </div>
-          <p>© {new Date().getFullYear()} Tools Web. All rights reserved.</p>
         </div>
       </div>
 
       {/* Forgot Password Modal */}
       {forgotModal && (
-        <div className="fixed inset-0 bg-brand-dark/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-dark-surface rounded-3xl max-w-sm w-full p-6 sm:p-7 border border-brand-border dark:border-dark-border shadow-elevated animate-fadeIn">
-            <div className="w-10 h-10 rounded-2xl bg-brand-light dark:bg-dark-card flex items-center justify-center text-brand-secondary dark:text-brand-accent mb-4">
-              <Lock className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-brand-text-primary dark:text-dark-text mb-2">
-              Lupa Password?
-            </h3>
-            <p className="text-xs text-brand-text-secondary dark:text-dark-muted mb-5 leading-relaxed">
-              Untuk kemudahan pengujian, Anda dapat masuk menggunakan <strong>1-Click Demo Login</strong> atau mengatur ulang kata sandi kapan saja melalui menu <strong>Profile</strong> setelah masuk.
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-[#1E2922] rounded-3xl max-w-sm w-full p-6 sm:p-7 border border-slate-200 dark:border-slate-700 shadow-2xl text-[#0F172A] dark:text-white animate-fadeIn">
+            <h3 className="text-base font-bold mb-2">Esqueceu a senha?</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mb-5 leading-relaxed">
+              Anda dapat masuk langsung menggunakan <strong>1-Click Demo Login</strong> atau mengatur ulang kata sandi melalui menu Profile setelah berhasil masuk.
             </p>
             <div className="space-y-2">
               <button
@@ -392,16 +258,15 @@ export default function Login() {
                   setForgotModal(false);
                   handleDemoLogin();
                 }}
-                className="w-full py-2.5 bg-brand-accent text-brand-dark text-xs font-bold rounded-xl hover:bg-emerald-400 transition-colors flex items-center justify-center space-x-1.5"
+                className="w-full py-2.5 bg-[#0284C7] text-white text-xs font-bold rounded-full hover:bg-[#0369A1] transition-colors"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Masuk dengan Akun Demo</span>
+                Entrar com Demo
               </button>
               <button
                 onClick={() => setForgotModal(false)}
-                className="w-full py-2.5 bg-brand-bg dark:bg-dark-card text-brand-text-secondary dark:text-dark-muted text-xs font-semibold rounded-xl hover:bg-brand-border dark:hover:bg-dark-border transition-colors"
+                className="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
               >
-                Tutup
+                Fechar / Tutup
               </button>
             </div>
           </div>
