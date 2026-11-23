@@ -198,7 +198,12 @@ function createJsonResponse(data, statusCode) {
 // ==========================================
 
 function getSpreadsheet() {
-  return SpreadsheetApp.getActiveSpreadsheet();
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    if (ss) return ss;
+  } catch (e) {}
+  const spreadsheetId = SCRIPT_PROPERTIES.getProperty('SPREADSHEET_ID') || '1ICfEvevZo5m3OvL8u0NGfRaJGJb1XqH4imoJ4GHctwM';
+  return SpreadsheetApp.openById(spreadsheetId);
 }
 
 function ensureDatabase() {
